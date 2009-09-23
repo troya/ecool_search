@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
+	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/compass-2.3.0-beta1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/lucene-core.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/ws-commons-util-1.0.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/xmlrpc-common-3.1.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/xmlrpc-server-3.1.2.jar"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>

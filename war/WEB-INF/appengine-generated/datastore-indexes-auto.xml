@@ -1,0 +1,8 @@
+<!-- Indices written at Wed, 23 Sep 2009 10:36:09 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 7 times in query history -->
+    <datastore-index kind="meta" ancestor="true" source="auto"/>
+
+</datastore-indexes>
