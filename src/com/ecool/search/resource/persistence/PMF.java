@@ -2,8 +2,12 @@
 // $Id$
 package com.ecool.search.resource.persistence;
 
+import java.util.List;
+
 import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 
 import org.compass.core.Compass;
 import org.compass.core.config.CompassConfiguration;
@@ -45,5 +49,14 @@ public class PMF {
     
     public static Compass getCompass(){
     	return compass;
+    }
+    
+
+    public static <T> List<T> query(Class clz, String queryString, String declareParameter, Object... parameterValues){
+    	PersistenceManager persistenceManager = pmfInstance.getPersistenceManager();
+    	Query query = persistenceManager.newQuery(clz, queryString);
+    	query.declareParameters(declareParameter);
+    	return (List<T>) query.executeWithArray(parameterValues);	
+    	
     }
 }

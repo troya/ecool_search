@@ -23,11 +23,8 @@ public class CreateUpdateResourceHandler {
 		
 		ContentResource resource = null;
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		Query query = pm.newQuery("select from ContentResource " +
-                "where externalID == externalIDParam " +
-                "parameters String externalIDParam");
-
-		List<ContentResource> results = (List<ContentResource>) query.execute(externalID);
+		List<ContentResource> results = PMF.query(ContentResource.class, "externalID == externalIDParam",
+                "String externalIDParam", externalID);
 		if(results.size() == 0){
 			resource = new ContentResource();
 		}else{
