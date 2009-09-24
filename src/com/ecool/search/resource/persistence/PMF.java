@@ -30,6 +30,7 @@ public class PMF {
     static {
     	compass = new CompassConfiguration().setConnection("gae://index")
     				.setSetting(CompassEnvironment.ExecutorManager.EXECUTOR_MANAGER_TYPE, "disabled")
+    				.setSetting("compass.engine.analyzer.custom.type","org.wltea.analyzer.lucene.IKAnalyzer")
     				.addScan("com.ecool.search.resource.model")
     				.buildCompass();
     	
