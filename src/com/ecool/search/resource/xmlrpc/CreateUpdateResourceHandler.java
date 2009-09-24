@@ -19,7 +19,7 @@ import com.ecool.search.resource.persistence.PMF;
  */
 public class CreateUpdateResourceHandler {
 	@SuppressWarnings("unchecked")
-	public String upsertResource(String title, String tags, String content, String externalID, Date date){
+	public String upsertResource(String title, String type, String tags, String content, String externalID, Date date){
 		
 		ContentResource resource = null;
 		PersistenceManager pm = PMF.get().getPersistenceManager();
@@ -37,7 +37,9 @@ public class CreateUpdateResourceHandler {
 		resource.setDate(date);
 		resource.setExternalID(externalID);
 		resource.setTitle(title);
+		resource.setType(type);
 		resource.setTags(tags);
+		
 		
 		try {
 			pm.makePersistent(resource);

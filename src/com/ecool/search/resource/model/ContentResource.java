@@ -46,6 +46,10 @@ public class ContentResource {
 	@Persistent
 	@SearchableProperty
 	private String title;
+	
+	@Persistent
+	@SearchableProperty
+	private String type;
 
 	public Long getId() {
 		return id;
@@ -93,6 +97,14 @@ public class ContentResource {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	
