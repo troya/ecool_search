@@ -2,8 +2,6 @@
 // $Id$
 package com.ecool.search.resource.xmlrpc;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -23,8 +21,9 @@ public class CreateUpdateResourceHandler {
 		
 		ContentResource resource = null;
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		List<ContentResource> results = PMF.query(ContentResource.class, "externalID == externalIDParam",
-                "String externalIDParam", externalID);
+		Query query = pm.newQuery(ContentResource.class, "externalID == externalIDParam");
+    	query.declareParameters("String externalIDParam");
+		List<ContentResource> results = (List<ContentResource>) query.execute(externalID);
 		if(results.size() == 0){
 			resource = new ContentResource();
 		}else{
